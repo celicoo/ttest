@@ -13,7 +13,7 @@ before_install:
   - go get github.com/mgechev/revive
 
 script:
-  - test -z "$(revive -config revive.toml ./...)"
+  - test -z "$(revive -config revive.toml .)"
   - go test -v -race -covermode=atomic -coverprofile=coverage.txt ./...
   - go vet ./...
 
